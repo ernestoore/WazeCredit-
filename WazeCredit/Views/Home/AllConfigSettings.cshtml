@@ -1,0 +1,15 @@
+﻿@model List<string>
+@using Microsoft.Extensions.Options
+@inject IOptions<WazeCredit.Utility.AppSettings.WazeForecastSettings> wazeForeCasting
+
+<div>
+    <h1>List of data from AppSettings </h1>
+
+    @foreach (var item in Model)
+    {
+        <h5>@item</h5>
+    }
+    
+    <p>Current Market Prediction Status: @(wazeForeCasting.Value.ForecastTrackerEnabled ? "Online" : "Offline")</p>
+
+</div>
